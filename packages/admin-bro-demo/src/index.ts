@@ -14,7 +14,7 @@ AdminBro.registerAdapter(AdminBroSequelize)
 
 const run = async (): Promise<void> => {
   const sequelize = await connect()
-
+  console.log(process.env)
   const admin = new AdminBro(options)
 
   await createAdmin()

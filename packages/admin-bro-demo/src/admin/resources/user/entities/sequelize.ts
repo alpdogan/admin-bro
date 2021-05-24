@@ -4,7 +4,7 @@ import { sequelize } from '../../../../databases/sequelize'
 
 export interface UserSequelizeInterface extends UserInterface, Model {}
 
-export const UserModel = sequelize.define<UserSequelizeInterface>('Users', {
+export const UserModel = sequelize.define<UserSequelizeInterface>('user', {
   // Model attributes are defined here
   id: {
     primaryKey: true,
@@ -30,5 +30,5 @@ export const UserModel = sequelize.define<UserSequelizeInterface>('Users', {
     type: DataTypes.JSONB,
   },
 }, {
-  // Other model options go here
+  freezeTableName: true
 })
